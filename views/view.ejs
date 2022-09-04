@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home page</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="main-body">
+    <!-- Animated BG -->
+    <ul class="circles">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    <!-- Popup only -->
+    <div class="popup body-txt-spacing hidden">
+      <div class="open-post">
+        <div class="post-header">
+          <div class="tagName cursor-def">Physics assignment</div>
+          <div class="close-btn">
+            <i class="fa fa-xmark"></i>
+          </div>
+        </div>
+        <div class="post-body">
+          <!-- Main resource -->
+          <img src="images/004.jpg" alt="" width="280rem" />
+          <!-- <embed src="/dummy-files/book.pdf" type="" height="100%" width="100%" /> -->
+          <!-- Description -->
+          <p class="description cursor-def">
+            <em>Add file description here</em>
+          </p>
+          <!-- Deadline -->
+          <div class="post-deadline cursor-def">
+            <h2> 15.10.2022 <span style="font-size: 1rem"><em>is the deadline for this tag</em></span>
+            </h2>
+          </div>
+        </div>
+        <div class="delete-post">
+          <i class="fa-solid fa-trash"></i>
+        </div>
+      </div>
+    </div>
+    <!-- Popup ends -->
+    <div class="header">
+      <div class="navbar">
+        <!-- Logo -->
+        <div class="logo cursor-def">
+          <h1>MANAGIFY</h1>
+        </div>
+        <!-- Subjects -->
+        <div class="subjects-div body-txt-spacing">
+          <div class="subject-btn">
+            <p>Notices</p>
+          </div>
+          <% for(var i=0; i < subjects.length; i++) { %>
+            <div class="subject-btn">
+              <p>
+                <%= subjects[i] %>
+              </p>
+            </div>
+            <% } %>
+        </div>
+        <!-- Logout -->
+        <!-- <div class="logout">
+            <form action="">
+              <button type="submit" class="logout-btn"><i class="fa-solid fa-right-from-bracket"></i></button>
+            </form>
+          </div> -->
+      </div>
+      <div class="logout">
+        <form action="/logout">
+          <button type="submit" class="logout-btn">
+            <i class="fa-solid fa-right-from-bracket"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="main-section body-txt-spacing">
+      <div class="page-heading">
+        <h3 class="subject-name cursor-def">NOTICES</h3>
+        <div class="search-bar">
+          <i class="fa fa fa-magnifying-glass"></i>
+          <input type="text" name="search" id="search-query" placeholder="Search in all subjects" />
+        </div>
+      </div>
+      <div class="content-page">
+        <div class="content-mask">
+          <% for(var i=0; i<userData.length; i++) { %>
+            
+          <div class="post-div">
+            <div class="wrapper">
+              <p class="tag-name"><%= userData[i].tagName %></p>
+              <p class="content-type"><%= userData[i].mediaType %></p>
+            </div>
+            <p class="deadline"><%= userData[i].deadline %></p>
+            <span class="hidden"><%= userData[i].subject %></span>
+          
+          </div>
+          
+          <% } %>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="footer">
+
+        </div> -->
+  </div>
+  <!-- JavaScript starts here -->
+  <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+    crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
