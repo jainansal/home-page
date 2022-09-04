@@ -7,13 +7,17 @@ $(".post-div").each((index, element) => {
 })
 
 $("body")[0].addEventListener("click", (event) => {
+    checkThenToggle(event);
+})
+
+function togglePopup() {
+    $(".popup")[0].classList.toggle("hidden");
+}
+
+function checkThenToggle(event) {
     if(!($(".popup")[0].classList.contains("hidden"))) {
         if(event.target.classList.contains("popup")) {
             togglePopup();
         }
     }
-})
-
-function togglePopup() {
-    $(".popup")[0].classList.toggle("hidden");
 }

@@ -56,7 +56,6 @@ input {
 .navbar {
   display: flex;
   flex-direction: row;
-  /* justify-content: space-between; */
   align-items: center;
   background-color: #0b1515;
   padding: 1.5rem;
@@ -81,11 +80,12 @@ input {
   align-self: center;
   display: flex;
   justify-content: flex-start;
-  width: auto;
-  overflow-x: auto;
+  width:auto;
   margin-left: 2rem;
   margin-right: 2rem;
   height: 2.5rem;
+  max-width: 75%;
+  overflow-x: hidden;
 }
 
 .subject-btn {
@@ -148,7 +148,7 @@ input {
   z-index: 1;
   background-color: #c3c5ff;
   border-radius: 1rem;
-  height: 36.5rem;
+  height: 35rem;
   width: 75%;
   padding: 0.75rem;
 }
@@ -200,21 +200,30 @@ input {
 }
 
 /* Scrollbar */
+
 /* width */
 ::-webkit-scrollbar {
-  width: 0.65rem;
+  width: 0.5rem;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: rgb(78, 84, 200, 0.3);
+  background: transparent;
   border-radius: 1rem;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: rgb(78, 84, 200, 0.5);
+  background: rgb(78, 84, 200, 0.4);
   border-radius: 1rem;
+}
+
+/* Responsiveness */
+
+@media screen and (max-width:1300px) {
+  .content-type {
+    margin-left: 4rem;
+  }
 }
 
 /* Animated BG */
